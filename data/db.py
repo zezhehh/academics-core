@@ -29,7 +29,7 @@ class DB:
             )"""
         )
         self.cursor.execute(
-            """CREATE TABLE IF NOT EXISTS subjects_offered (
+            """CREATE TABLE IF NOT EXISTS subject_offered (
                 id INTEGER PRIMARY KEY, 
                 institution_id INTEGER, 
                 subject_id INTEGER,
@@ -111,7 +111,7 @@ class DB:
 
     def create_subject_offered(self, institution: Institution, subjects: list[Subject]):
         self.cursor.executemany(
-            """INSERT OR IGNORE INTO subjects_offered (institution_id, subject_id) 
+            """INSERT OR IGNORE INTO subject_offered (institution_id, subject_id) 
             VALUES (?, ?)""",
             [(institution.id, subject.id) for subject in subjects],
         )
