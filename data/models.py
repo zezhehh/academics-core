@@ -10,5 +10,6 @@ class Institution(BaseModel):
     qs_score: float
     times_score: float
     name: str
+    lower_case_name: str
     country_code: str
     website: str

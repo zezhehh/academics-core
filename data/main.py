@@ -41,8 +41,11 @@ def extract():
                     times_score = (float(scores[0]) + float(scores[1])) / 2
                 elif type(times_score) == str and times_score == "":
                     times_score = 0
+                institution_name = row[mapping[FieldName.INSTITUTION_NAME]].strip()
+                lower_case_name = institution_name.lower()
                 institution = Institution(
-                    name=row[mapping[FieldName.INSTITUTION_NAME]].strip(),
+                    name=institution_name,
+                    lower_case_name=lower_case_name,
                     country_code=country_code.strip(),
                     qs_score=qs_score,
                     times_score=times_score,

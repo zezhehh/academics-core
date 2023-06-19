@@ -1,2 +1,3 @@
 pydantic
 typer[all]
+psycopg2-binary
