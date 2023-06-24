@@ -14,8 +14,8 @@ class DB:
             password=os.getenv("DB_PWD"),
         )
         self.cursor = self.conn.cursor()
-        self.drop_all()
-        self.create_tables()
+        # self.drop_all()
+        # self.create_tables()
 
     def __del__(self):
         self.conn.close()

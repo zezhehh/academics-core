@@ -2,3 +2,4 @@ venv/
 *:Zone.Identifier
 __pycache__/
 .env
+pg.*
