@@ -1,9 +1,11 @@
 package structs
 
-func ConvertToDocument(institution *Institution, subjects []*Subject) InstitutionDocument {
+import "strings"
+
+func ConvertToDocument(institution Institution, subjects []*Subject) InstitutionDocument {
 	var subjectNames []string
 	for _, subject := range subjects {
-		subjectNames = append(subjectNames, subject.Name)
+		subjectNames = append(subjectNames, strings.ReplaceAll(subject.Name, " & ", " "))
 	}
 	return InstitutionDocument{
 		ID:            institution.ID,

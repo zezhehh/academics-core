@@ -7,6 +7,7 @@ require (
 	github.com/joho/godotenv v1.5.1
 	github.com/lib/pq v1.10.9
 	github.com/meilisearch/meilisearch-go v0.25.0
+	golang.org/x/sync v0.3.0
 )
 
 require (
