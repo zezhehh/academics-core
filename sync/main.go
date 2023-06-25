@@ -113,4 +113,17 @@ func main() {
 		log.Fatalf("Failed to add documents to meilisearch: %v", err)
 	}
 	log.Println("Successfully added documents to meilisearch")
+
+	_, err = client.Index("institutions").UpdateSettings(
+		&meilisearch.Settings{
+			FilterableAttributes: []string{
+				"country_code",
+			},
+		},
+	)
+	if err != nil {
+		log.Fatal("Failed to update settings")
+	}
+
+	log.Println("Successfully updated settings")
 }
